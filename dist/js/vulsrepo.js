@@ -576,7 +576,8 @@ var createPivotData = function(resultArray) {
 					"Family" : x_val.data.Family,
 					"Release" : x_val.data.Release,
 					"CveID" : '<a class="cveid">' + y_val.CveDetail.CveID + '</a>',
-					"Packages" : p_val.Name
+					"Packages" : p_val.Name,
+					"UpdateVersion" : p_val.NewVersion
 				};
 
 				if (y_val.CveDetail.Nvd.CweID === "" || y_val.CveDetail.Nvd.CweID === undefined) {
@@ -646,6 +647,7 @@ var createPivotData = function(resultArray) {
 					"CveID" : '<a class="cveid">' + y_val.CveDetail.CveID + '</a>',
 					"CweID" : "Unknown",
 					"Packages" : p_val.Name,
+					"UpdateVersion" : p_val.NewVersion,
 					"CVSS Score" : "Unknown",
 					"CVSS Severity" : "Unknown",
 					"Summary" : "Unknown",
@@ -683,6 +685,7 @@ var createPivotData = function(resultArray) {
 				"CveID" : "healthy",
 				"CweID" : "healthy",
 				"Packages" : "healthy",
+				"UpdateVersion" : "healthy",
 				"CVSS Score" : "healthy",
 				"CVSS Severity" : "healthy",
 				"Summary" : "healthy",
