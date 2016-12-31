@@ -170,7 +170,6 @@ var getData = function() {
 		$.getJSON(url).done(function(json_data) {
 			endCount++;
 			var resultMap = {
-				scanTime : value.parent_title,
 				data : json_data
 			};
 			resultArray.push(resultMap);
@@ -571,7 +570,7 @@ var createPivotData = function(resultArray) {
 
 			$.each(knownValue, function(p, p_val) {
 				var KnownObj = {
-					"ScanTime" : x_val.scanTime,
+					"ScanTime" : x_val.data.ScannedAt,
 					"ServerName" : x_val.data.ServerName,
 					"Family" : x_val.data.Family,
 					"Release" : x_val.data.Release,
@@ -640,7 +639,7 @@ var createPivotData = function(resultArray) {
 
 			$.each(unknownValue, function(p, p_val) {
 				var UnknownObj = {
-					"ScanTime" : x_val.scanTime,
+					"ScanTime" : x_val.data.ScannedAt,
 					"ServerName" : x_val.data.ServerName,
 					"Family" : x_val.data.Family,
 					"Release" : x_val.data.Release,
@@ -678,7 +677,7 @@ var createPivotData = function(resultArray) {
 
 		if ((x_val.data.KnownCves.length === 0) && (x_val.data.UnknownCves === null)) {
 			var nothingObj = {
-				"ScanTime" : x_val.scanTime,
+        "ScanTime" : x_val.data.ScannedAt,
 				"ServerName" : x_val.data.ServerName,
 				"Family" : x_val.data.Family,
 				"Release" : x_val.data.Release,
